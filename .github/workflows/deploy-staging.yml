@@ -89,7 +89,7 @@ jobs:
           images: ${{ env.IMAGE_REGISTRY_URL }}/${{ github.repository }}/${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }}
 
       - name: Azure logout via Azure CLI
-        uses: azure/CLI@v2
+        uses: azure/CLI@v3
         with:
           inlineScript: |
             az logout
