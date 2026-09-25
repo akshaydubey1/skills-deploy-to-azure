@@ -56,10 +56,10 @@ To deploy successfully to our Azure environment:
         if: contains(github.event.pull_request.labels.*.name, 'spin up environment')
         steps:
           - name: Checkout repository
-            uses: actions/checkout@v4
+            uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
           - name: Azure login
-            uses: azure/login@v2
+            uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3
             with:
               creds: ${{ secrets.AZURE_CREDENTIALS }}
 
@@ -90,10 +90,10 @@ To deploy successfully to our Azure environment:
 
         steps:
           - name: Checkout repository
-            uses: actions/checkout@v4
+            uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
           - name: Azure login
-            uses: azure/login@v2
+            uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3
             with:
               creds: ${{ secrets.AZURE_CREDENTIALS }}
 
