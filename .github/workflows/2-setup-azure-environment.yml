@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - id: get_step
         run: |
           echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
@@ -51,50 +51,50 @@ jobs:
     steps:
       # We'll need to check out the repository so that we can edit the README.
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0 # Let's get all the branches.
 
       # Verify the learner configured Build-Docker-Image job.
       - name: Verify Build-Docker-Image job
-        uses: skills/action-check-file@v1
+        uses: skills/action-check-file@4d0de7b50a7e5cf7c041746656ebb03f2b54acaf # v1
         with:
           file: .github/workflows/deploy-staging.yml
           search: "Build-Docker-Image"
 
       - name: Verify Build-Docker-Image job
-        uses: skills/action-check-file@v1
+        uses: skills/action-check-file@4d0de7b50a7e5cf7c041746656ebb03f2b54acaf # v1
         with:
           file: .github/workflows/deploy-staging.yml
           search: "actions/download-artifact"
 
       - name: Verify Build-Docker-Image job
-        uses: skills/action-check-file@v1
+        uses: skills/action-check-file@4d0de7b50a7e5cf7c041746656ebb03f2b54acaf # v1
         with:
           file: .github/workflows/deploy-staging.yml
           search: "docker/login-action"
 
       - name: Verify Build-Docker-Image job
-        uses: skills/action-check-file@v1
+        uses: skills/action-check-file@4d0de7b50a7e5cf7c041746656ebb03f2b54acaf # v1
         with:
           file: .github/workflows/deploy-staging.yml
           search: "docker/build-push-action"
 
       # Verify the learner configured the Deploy-to-Azure job.
       - name: Verify Deploy-to-Azure job
-        uses: skills/action-check-file@v1
+        uses: skills/action-check-file@4d0de7b50a7e5cf7c041746656ebb03f2b54acaf # v1
         with:
           file: .github/workflows/deploy-staging.yml
           search: "Deploy-to-Azure"
 
       - name: Verify Deploy-to-Azure job
-        uses: skills/action-check-file@v1
+        uses: skills/action-check-file@4d0de7b50a7e5cf7c041746656ebb03f2b54acaf # v1
         with:
           file: .github/workflows/deploy-staging.yml
           search: "azure/login"
 
       - name: Verify Deploy-to-Azure job
-        uses: skills/action-check-file@v1
+        uses: skills/action-check-file@4d0de7b50a7e5cf7c041746656ebb03f2b54acaf # v1
         with:
           file: .github/workflows/deploy-staging.yml
           search: "azure/webapps-deploy"
@@ -115,7 +115,7 @@ jobs:
 
       # In README.md, switch step 2 for step 3.
       - name: Update to step 3
-        uses: skills/action-update-step@v2
+        uses: skills/action-update-step@9046776751ec172f2b10c6b9569c108ffa701a2d # v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 2
